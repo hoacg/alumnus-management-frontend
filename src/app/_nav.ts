@@ -1,4 +1,4 @@
-import { INavData } from '../../dist/@coreui/angular';
+import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
   {
@@ -9,6 +9,16 @@ export const navItems: INavData[] = [
       variant: 'info',
       text: 'NEW'
     }
+  },
+  {
+    name: 'Alumnus List',
+    url: '/alumnus',
+    icon: 'icon-speedometer',
+  },
+  {
+    name: 'Company List',
+    url: '/companies',
+    icon: 'icon-speedometer',
   },
   {
     name: 'Disabled',

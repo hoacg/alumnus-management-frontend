@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
+import {AlumnusListComponent} from "./views/alumnus-list/alumnus-list.component";
+import {AlumniFormComponent} from "./views/alumni-form/alumni-form.component";
 
 export const routes: Routes = [
   {
@@ -20,6 +22,18 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'alumnus',
+        component: AlumnusListComponent
+      },
+      {
+        path: 'alumnus-add',
+        component: AlumniFormComponent
+      },
+      {
+        path: 'alumnus-edit/:id',
+        component: AlumniFormComponent
       }
     ]
   },
