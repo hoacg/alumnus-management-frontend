@@ -17,8 +17,8 @@ export class AlumnusService {
     return this.httpClient.get<Alumni[]>(apiUrl);
   }
 
-  getById(id: number): Observable<Alumni[]> {
-    return this.httpClient.get<Alumni[]>(`${apiUrl}/${id}`); // apiUrl + '/' + id
+  getById(id: number): Observable<Alumni> {
+    return this.httpClient.get<Alumni>(`${apiUrl}/${id}`); // apiUrl + '/' + id
   }
 
   createAlumni(alumni: Alumni): Observable<Alumni> {
@@ -27,6 +27,10 @@ export class AlumnusService {
 
   updateAlumni(alumni: Alumni): Observable<Alumni> {
     return this.httpClient.put<Alumni>(apiUrl, alumni); // apiUrl/id
+  }
+
+  deleteById(id: number): Observable<any> {
+    return this.httpClient.delete(`${apiUrl}/${id}`);
   }
 
 }

@@ -15,4 +15,10 @@ export class AlumniCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteAlumni(id: number) {
+    this.alumnusService.deleteById(id).subscribe( () => {
+      this.alumnusService.shouldRefresh.next();
+    });
+  }
+
 }

@@ -5,5 +5,6 @@
     <p class="card-text"><b>{{alumni.jobtitle}}</b> - {{ alumni.notes }}</p>
     <a href="#" class="btn btn-primary" routerLink="/alumnus/{{alumni.id}}">Detail</a>
     <a href="#" class="btn btn-secondary" routerLink="/alumnus-edit/{{alumni.id}}"><span class="cui-contrast"></span> Edit</a>
+    <button class="btn btn-danger" (click)="deleteAlumni(alumni.id)"><span class="cui-contrast"></span> Delete</button>
   </div>
 </div>
