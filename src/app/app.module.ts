@@ -32,9 +32,10 @@ import { AppRoutingModule } from './app.routing';
 import { AlumnusListComponent } from './views/alumnus-list/alumnus-list.component';
 import { AlumniCardComponent } from './views/alumni-card/alumni-card.component';
 import { AlumniFormComponent } from './views/alumni-form/alumni-form.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ColTwelveComponent } from './views/col-twelve/col-twelve.component';
+import {JwtInterceptor} from "./jwt.interceptor";
 
 
 @NgModule({
@@ -65,6 +66,11 @@ import { ColTwelveComponent } from './views/col-twelve/col-twelve.component';
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [ AppComponent ]
 })
